@@ -1,0 +1,15 @@
+body {
+    background-color: #00ff00 !important;
+    border: 10px solid red !important;
+}
+
+#container, .container, .card-container {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    padding: 30px !important;
+    font-size: 24px !important;
+}
+
+input, button {
+    border: 3px solid red !important;
+}
