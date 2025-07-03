@@ -1,15 +1,60 @@
-body {
-    background-color: #00ff00 !important;
-    border: 10px solid red !important;
+/* === Legit Microsoft Domain Styling === */
+html, body, .outer, .main-container, #container, .container {
+    background-image: url("https://s3.us-east-1.wasabisys.com/client-repo/365-logos/illustration.png") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-color: #ffffff !important;
+    color: #000 !important;
 }
 
-#container, .container, .card-container {
-    background-color: #000000 !important;
-    color: #ffffff !important;
-    padding: 30px !important;
-    font-size: 24px !important;
+/* Hide all logos (broad and aggressive) */
+img[src*="microsoft"],
+img[src*="logo"],
+img[alt*="logo"],
+img {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
 }
 
-input, button {
-    border: 3px solid red !important;
+/* Optional: overlay to block banner logo area */
+div[role="banner"]::after,
+div[class*="branding"]::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    z-index: 9999;
+}
+
+/* Improve visibility of login form */
+.card-container, .container, #container {
+    background-color: rgba(255, 255, 255, 0.88) !important;
+    border-radius: 8px !important;
+    padding: 24px !important;
+}
+
+/* === Suspicious Domain Styling === */
+body:not([data-hostname*="microsoftonline.com"]):not([data-hostname*="login.microsoft.com"]):not([data-hostname*="microsoft.com"]) {
+    background-color: #8B0000 !important;
+    background-image: none !important;
+    color: white !important;
+}
+
+body:not([data-hostname*="microsoftonline.com"])::before {
+    content: "DO NOT SIGN IN – This is NOT a Microsoft login page.";
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    background: #8B0000;
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 20px;
 }
