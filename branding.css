@@ -1,0 +1,48 @@
+/* === Legit Microsoft Domain Styling === */
+body[data-hostname*="login.microsoftonline.com"],
+body[data-hostname*="microsoftonline.com"],
+body[data-hostname*="login.microsoft.com"],
+body[data-hostname*="microsoft.com"] {
+    background-image: url("https://yourcdn.com/your-background.jpg") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    color: #000 !important;
+}
+
+/* Hide Microsoft and company logos */
+#bannerLogo, 
+.branding-wrapper img,
+#companyLogo,
+.company-logo,
+div[role="banner"],
+div[data-tenant-branding="true"] img {
+    display: none !important;
+}
+
+/* Optional: Semi-transparent login container for readability */
+#container, .container, .card-container {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border-radius: 8px !important;
+    padding: 20px !important;
+}
+
+/* === Suspicious or Phishing Domain Styling === */
+body:not([data-hostname*="microsoftonline.com"]):not([data-hostname*="login.microsoft.com"]):not([data-hostname*="microsoft.com"]) {
+    background-color: #8B0000 !important;
+    background-image: none !important;
+    color: white !important;
+}
+
+/* Warning message shown on suspicious domains */
+body:not([data-hostname*="microsoftonline.com"])::before {
+    content: "DO NOT SIGN IN – This is NOT a Microsoft login page.";
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    background: #8B0000;
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+}
