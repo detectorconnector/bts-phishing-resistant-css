@@ -3,7 +3,7 @@ body[data-hostname*="login.microsoftonline.com"],
 body[data-hostname*="microsoftonline.com"],
 body[data-hostname*="login.microsoft.com"],
 body[data-hostname*="microsoft.com"] {
-    background-image: url("https://yourcdn.com/your-background.jpg") !important;
+    background-image: url("https://s3.us-east-1.wasabisys.com/client-repo/365-logos/illustration.png") !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
